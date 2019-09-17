@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Login Background" translatesAutoresizingMaskIntoConstraints="NO" id="m8Q-Z9-b8D">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0p-bC-EOd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="aFN-Xc-lEi">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Dbe-aL-2KC">
+                                            <rect key="frame" x="0.0" y="67" width="375" height="533"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="85D-uV-XgO">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="158"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="158" id="1cc-u9-GWe"/>
+                                                    </constraints>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="WORKOUT">
+                                                            <attributes>
+                                                                <font key="NSFont" size="39" name="AvenirNext-DemiBold"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                        <fragment content="                        VISUALIZER">
+                                                            <attributes>
+                                                                <font key="NSFont" size="40" name="AvenirNext-UltraLight"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="App Icon" translatesAutoresizingMaskIntoConstraints="NO" id="i4E-Nj-AQS">
+                                                    <rect key="frame" x="0.0" y="158" width="375" height="375"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="i4E-Nj-AQS" secondAttribute="height" multiplier="1:1" id="xCd-jU-F5g"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Dbe-aL-2KC" firstAttribute="centerX" secondItem="aFN-Xc-lEi" secondAttribute="centerX" id="8js-4O-ulf"/>
+                                        <constraint firstAttribute="trailing" secondItem="Dbe-aL-2KC" secondAttribute="trailing" id="Fbr-Pe-7RW"/>
+                                        <constraint firstItem="Dbe-aL-2KC" firstAttribute="leading" secondItem="aFN-Xc-lEi" secondAttribute="leading" id="VpZ-xJ-1ji"/>
+                                        <constraint firstItem="Dbe-aL-2KC" firstAttribute="centerY" secondItem="aFN-Xc-lEi" secondAttribute="centerY" id="liN-ir-WrH"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="m8Q-Z9-b8D" secondAttribute="trailing" id="1M9-G8-DCd"/>
+                            <constraint firstItem="m8Q-Z9-b8D" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="2I4-yL-DKa"/>
+                            <constraint firstAttribute="trailing" secondItem="l0p-bC-EOd" secondAttribute="trailing" id="C9P-UF-ldt"/>
+                            <constraint firstAttribute="bottom" secondItem="l0p-bC-EOd" secondAttribute="bottom" id="DNP-TN-HW3"/>
+                            <constraint firstItem="l0p-bC-EOd" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="SZK-dz-sIS"/>
+                            <constraint firstItem="l0p-bC-EOd" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="eCd-nB-j27"/>
+                            <constraint firstAttribute="bottom" secondItem="m8Q-Z9-b8D" secondAttribute="bottom" id="kBM-D8-Jf7"/>
+                            <constraint firstItem="m8Q-Z9-b8D" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="zhQ-sF-bUV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="App Icon" width="510" height="599"/>
+        <image name="Login Background" width="426" height="240"/>
+    </resources>
+</document>

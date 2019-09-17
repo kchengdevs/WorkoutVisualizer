@@ -1,0 +1,56 @@
+//
+//  hexagonButton.swift
+//  Workout Visualizer
+//
+//  Created by Kevin Cheng on 8/8/18.
+//  Copyright © 2018 Fitness Visualize. All rights reserved.
+//
+
+import UIKit
+class hexagonButton: UIButton {
+    
+    @objc func Release() {
+        self.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 11, 0)
+    }
+    
+    @objc func HoldDown() {
+        self.titleEdgeInsets = UIEdgeInsetsMake(18.75, 0, 0, 0)
+    }
+        
+    func getColourFromPoint(point:CGPoint) -> UIColor {
+        let colorSpace:CGColorSpace = CGColorSpaceCreateDeviceRGB()
+        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedLast.rawValue)
+            
+        var pixelData:[UInt8] = [0, 0, 0, 0]
+        
+        let context = CGContext(data: &pixelData, width: 1, height: 1, bitsPerComponent: 8, bytesPerRow: 4, space: colorSpace, bitmapInfo: bitmapInfo.rawValue)
+        context?.translateBy(x: -point.x, y: -point.y);
+        self.layer.render(in: context!)
+        
+        let red:CGFloat = CGFloat(pixelData[0])/CGFloat(255.0)
+        let green:CGFloat = CGFloat(pixelData[1])/CGFloat(255.0)
+        let blue:CGFloat = CGFloat(pixelData[2])/CGFloat(255.0)
+        let alpha:CGFloat = CGFloat(pixelData[3])/CGFloat(255.0)
+            
+        let color:UIColor = UIColor(red: red, green: green, blue: blue, alpha: alpha)
+        self.addTarget(self, action: #selector(Release), for: UIControlEvents.touchUpInside)
+        self.addTarget(self, action: #selector(HoldDown), for: UIControlEvents.touchDown)
+        self.addTarget(self, action: #selector(Release), for: UIControlEvents.touchDragExit)
+        return color
+        
+    }
+        
+    open override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        if (!self.bounds.contains(point)) {
+            return nil
+        }
+        else {
+            let color : UIColor = self.getColourFromPoint(point: point)
+            let alpha = color.cgColor.alpha
+            if alpha <= 0.0 {
+                return nil
+            }
+            return self
+            }
+    }
+}
